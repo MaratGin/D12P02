@@ -91,7 +91,7 @@ int read_field(Field field) {
         }
         symbol = getchar();
     }
-    return valid && has_cells && row == HEIGHT && total_columns == 2000;
+    return valid && has_cells && row == HEIGHT && (total_columns == HEIGHT * WIDTH);
 }
 
 int store_cell(Field field, const int *row, int *column, int symbol) {
