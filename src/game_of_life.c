@@ -52,7 +52,7 @@ int main(void) {
 
     clear_field(field);
     if (!read_field(field)) {
-        printf("n/aa");
+        printf("n/a");
         result = 1;
     } else {
         run_game(field);
@@ -91,7 +91,6 @@ int read_field(Field field) {
         }
         symbol = getchar();
     }
-    printf("n/aa %d", row);
     return valid && has_cells && row == HEIGHT && total_columns == 2000;
 }
 
@@ -291,7 +290,7 @@ void run_game(Field field) {
     int colors_enabled = 0;
 
     if (!open_terminal(&terminal)) {
-        printf("n/a\n");
+        printf("n/a");
         return;
     }
     colors_enabled = configure_terminal();
