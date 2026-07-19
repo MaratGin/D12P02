@@ -201,7 +201,6 @@ int configure_terminal(void) {
     noecho();
     curs_set(0);
     nodelay(stdscr, TRUE);
-    keypad(stdscr, TRUE);
     if (colors_enabled) {
         initialize_colors();
     }
