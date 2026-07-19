@@ -75,7 +75,6 @@ int read_field(Field field) {
     int total_columns = 0;
     int symbol = getchar();
     int valid = 1;
-    int has_cells = 0;
 
     while (symbol != EOF && valid) {
         if (symbol == '\n') {
@@ -87,11 +86,10 @@ int read_field(Field field) {
         } else if (!is_ignored_symbol(symbol)) {
             valid = store_cell(field, &row, &column, symbol);
             total_columns += 1;
-            has_cells = 1;
         }
         symbol = getchar();
     }
-    return valid && has_cells && row == HEIGHT && (total_columns == HEIGHT * WIDTH);
+    return valid && row == HEIGHT && (total_columns == HEIGHT * WIDTH);
 }
 
 int store_cell(Field field, const int *row, int *column, int symbol) {
